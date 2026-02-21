@@ -1,0 +1,167 @@
+// Generador y conexión a la base de datos
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// ENUMS
+// ============================================
+
+/// Categorías de productos odontológicos
+enum Category {
+  MATERIALES
+  EQUIPAMIENTO
+  INSTRUMENTAL
+  TECNOLOGIA
+}
+
+/// Monedas soportadas
+enum Currency {
+  ARS
+  USD
+  EUR
+}
+
+/// Países de las tiendas
+enum Country {
+  AR
+  ES
+  CL
+  US
+}
+
+/// Plan del usuario
+enum UserPlan {
+  FREE
+  PRO
+}
+
+// ============================================
+// MODELOS
+// ============================================
+
+/// Tienda de insumos odontológicos
+model Store {
+  id            String         @id @default(cuid())
+  name          String
+  url           String         @unique
+  logoUrl       String?
+  country       Country        @default(AR)
+  isActive      Boolean        @default(true)
+  lastScrapedAt DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  // Relaciones
+  storeProducts StoreProduct[]
+
+  @@map("stores")
+}
+
+/// Producto maestro normalizado (independiente de tienda)
+model Product {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  brand       String?
+  ean         String?   @unique // Código de barras, único si existe
+  category    Category
+  subcategory String?
+  imageUrl    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relaciones
+  storeProducts StoreProduct[]
+  priceAlerts   PriceAlert[]
+
+  @@index([category])
+  @@index([brand])
+  @@index([name])
+  @@map("products")
+}
+
+/// Producto en una tienda específica (relación producto-tienda con precio)
+model StoreProduct {
+  id            String    @id @default(cuid())
+  productId     String
+  storeId       String
+  externalUrl   String
+  externalId    String?
+  price         Float
+  currency      Currency  @default(ARS)
+  isAvailable   Boolean   @default(true)
+  lastCheckedAt DateTime  @default(now())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relaciones
+  product      Product       @relation(fields: [productId], references: [id], onDelete: Cascade)
+  store        Store         @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  priceHistory PriceHistory[]
+
+  @@unique([productId, storeId])
+  @@index([storeId])
+  @@index([productId])
+  @@index([price])
+  @@map("store_products")
+}
+
+/// Historial de precios de un producto en una tienda
+model PriceHistory {
+  id             String   @id @default(cuid())
+  storeProductId String
+  price          Float
+  currency       Currency @default(ARS)
+  recordedAt     DateTime @default(now())
+
+  // Relaciones
+  storeProduct StoreProduct @relation(fields: [storeProductId], references: [id], onDelete: Cascade)
+
+  @@index([storeProductId])
+  @@index([recordedAt])
+  @@map("price_history")
+}
+
+/// Usuario registrado
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  plan      UserPlan @default(FREE)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  priceAlerts PriceAlert[]
+
+  @@map("users")
+}
+
+/// Alerta de precio configurada por un usuario
+model PriceAlert {
+  id          String    @id @default(cuid())
+  userId      String
+  productId   String
+  targetPrice Float
+  currency    Currency  @default(ARS)
+  isActive    Boolean   @default(true)
+  triggeredAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relaciones
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([productId])
+  @@index([isActive])
+  @@map("price_alerts")
+}

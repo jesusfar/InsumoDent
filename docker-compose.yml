@@ -1,0 +1,59 @@
+version: "3.8"
+
+services:
+  # Base de datos PostgreSQL 15
+  postgres:
+    image: postgres:15-alpine
+    container_name: insumodent-postgres
+    restart: unless-stopped
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-insumodent}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-insumodent_dev}
+      POSTGRES_DB: ${POSTGRES_DB:-insumodent}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-insumodent}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Cache Redis 7
+  redis:
+    image: redis:7-alpine
+    container_name: insumodent-redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Motor de búsqueda Meilisearch
+  meilisearch:
+    image: getmeili/meilisearch:v1.6
+    container_name: insumodent-meilisearch
+    restart: unless-stopped
+    ports:
+      - "${MEILI_PORT:-7700}:7700"
+    environment:
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-insumodent_meili_dev_key}
+      MEILI_ENV: development
+    volumes:
+      - msdata:/meili_data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7700/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:
+  redisdata:
+  msdata:

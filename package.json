@@ -1,0 +1,27 @@
+{
+  "name": "insumodent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Metabuscador de insumos odontológicos para Argentina e internacional",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rimraf node_modules",
+    "db:generate": "pnpm --filter @insumodent/database generate",
+    "db:push": "pnpm --filter @insumodent/database push",
+    "db:migrate": "pnpm --filter @insumodent/database migrate",
+    "db:seed": "pnpm --filter @insumodent/database seed",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "rimraf": "^5.0.5"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

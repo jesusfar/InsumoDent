@@ -1,0 +1,42 @@
+# Dependencias
+node_modules/
+
+# Build outputs
+dist/
+.next/
+out/
+
+# Turborepo
+.turbo/
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Docker volumes
+pgdata/
+redisdata/
+msdata/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+
+# Prisma
+packages/database/prisma/*.db
+packages/database/prisma/migrations/**/migration_lock.toml
