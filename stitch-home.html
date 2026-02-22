@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Insumodent - Comparador de precios dentales</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0e5cb0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "neutral-light": "#f1f5f9",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/90">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">dentistry</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Insumodent</span>
+</div>
+<!-- Navigation Desktop -->
+<nav class="hidden md:flex flex-1 items-center justify-end gap-8">
+<div class="flex items-center gap-6">
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors dark:text-slate-300 dark:hover:text-primary" href="#">Tiendas</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors dark:text-slate-300 dark:hover:text-primary" href="#">Ofertas</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors dark:text-slate-300 dark:hover:text-primary" href="#">Mi Cuenta</a>
+</div>
+<button class="inline-flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-white transition-all hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900">
+                        Ingresar
+                    </button>
+</nav>
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2 text-slate-600 hover:text-primary dark:text-slate-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="relative bg-white dark:bg-slate-900 py-20 lg:py-32 overflow-hidden">
+<!-- Decorative Background Elements -->
+<div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.4] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)]"></div>
+<div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+<h1 class="mb-6 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+                        Encuentra el mejor precio en <span class="text-primary">insumos odontológicos</span>
+</h1>
+<p class="mb-10 text-lg text-slate-600 dark:text-slate-400">
+                        Compara precios entre cientos de proveedores verificados y ahorra en tu clínica dental.
+                    </p>
+<!-- Search Box -->
+<div class="mx-auto max-w-2xl transform transition-all hover:-translate-y-1">
+<div class="relative flex items-center w-full h-14 md:h-16 rounded-2xl shadow-xl shadow-primary/5 bg-white ring-1 ring-slate-200 dark:bg-slate-800 dark:ring-slate-700 overflow-hidden">
+<div class="flex h-full w-14 items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="h-full flex-1 border-0 bg-transparent px-2 text-base md:text-lg text-slate-900 placeholder:text-slate-400 focus:ring-0 dark:text-white" placeholder="Buscar productos, marcas, SKU..." type="text"/>
+<div class="pr-2">
+<button class="h-10 md:h-12 rounded-xl bg-primary px-6 text-sm md:text-base font-bold text-white transition-colors hover:bg-primary-dark">
+                                    Buscar
+                                </button>
+</div>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="mt-12 flex flex-wrap justify-center gap-6 md:gap-12 opacity-60 grayscale transition-all hover:grayscale-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">verified_user</span>
+<span class="text-sm font-semibold text-slate-500">Proveedores Verificados</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">savings</span>
+<span class="text-sm font-semibold text-slate-500">Mejores Ofertas</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">local_shipping</span>
+<span class="text-sm font-semibold text-slate-500">Envíos a todo el país</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="bg-background-light dark:bg-background-dark py-16">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<h2 class="mb-8 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Categorías Populares</h2>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<!-- Category Card 1 -->
+<a class="group relative flex flex-col items-center gap-4 rounded-xl border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:border-primary/50 hover:shadow-md dark:border-slate-700 dark:bg-slate-800 dark:hover:border-primary/50" href="#">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-primary transition-transform group-hover:scale-110 dark:bg-slate-700 dark:text-blue-400">
+<span class="material-symbols-outlined text-4xl">dentistry</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Materiales</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Resinas, cementos y adhesivos</p>
+</a>
+<!-- Category Card 2 -->
+<a class="group relative flex flex-col items-center gap-4 rounded-xl border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:border-primary/50 hover:shadow-md dark:border-slate-700 dark:bg-slate-800 dark:hover:border-primary/50" href="#">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-primary transition-transform group-hover:scale-110 dark:bg-slate-700 dark:text-blue-400">
+<span class="material-symbols-outlined text-4xl">chair</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Equipamiento</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Sillones, lámparas y rayos X</p>
+</a>
+<!-- Category Card 3 -->
+<a class="group relative flex flex-col items-center gap-4 rounded-xl border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:border-primary/50 hover:shadow-md dark:border-slate-700 dark:bg-slate-800 dark:hover:border-primary/50" href="#">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-primary transition-transform group-hover:scale-110 dark:bg-slate-700 dark:text-blue-400">
+<span class="material-symbols-outlined text-4xl">medical_services</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Instrumental</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Forceps, espejos y exploradores</p>
+</a>
+<!-- Category Card 4 -->
+<a class="group relative flex flex-col items-center gap-4 rounded-xl border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:border-primary/50 hover:shadow-md dark:border-slate-700 dark:bg-slate-800 dark:hover:border-primary/50" href="#">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-primary transition-transform group-hover:scale-110 dark:bg-slate-700 dark:text-blue-400">
+<span class="material-symbols-outlined text-4xl">monitor_heart</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Tecnología</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Software, scanners y 3D</p>
+</a>
+</div>
+</div>
+</section>
+<!-- Featured Deals Section -->
+<section class="py-16">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Ofertas Destacadas</h2>
+<a class="flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-dark" href="#">
+                            Ver todas <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<!-- Product Card 1 -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-lg dark:border-slate-700 dark:bg-slate-800">
+<div class="absolute left-3 top-3 z-10 rounded bg-red-500 px-2 py-1 text-xs font-bold text-white shadow-sm">-20% OFF</div>
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-900">
+<div class="h-full w-full flex items-center justify-center bg-neutral-100 dark:bg-slate-800">
+<span class="material-symbols-outlined text-6xl text-slate-300 dark:text-slate-600">medication_liquid</span>
+</div>
+<div class="sr-only" data-alt="Resina compuesta dental 3M Filtek Z350"></div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<p class="text-xs font-semibold text-slate-500 dark:text-slate-400">3M ESPE</p>
+<h3 class="mt-1 text-sm font-bold text-slate-900 line-clamp-2 group-hover:text-primary dark:text-white">Resina Filtek Z350 XT Jeringa 4g - A2</h3>
+<div class="mt-4 flex flex-col gap-1">
+<span class="text-xs text-slate-400 line-through">$45.990</span>
+<span class="text-lg font-bold text-primary">$36.790</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-slate-100 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-200 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600">
+                                    Ver Oferta
+                                </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-lg dark:border-slate-700 dark:bg-slate-800">
+<div class="absolute left-3 top-3 z-10 rounded bg-red-500 px-2 py-1 text-xs font-bold text-white shadow-sm">-15% OFF</div>
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-900">
+<div class="h-full w-full flex items-center justify-center bg-neutral-100 dark:bg-slate-800">
+<span class="material-symbols-outlined text-6xl text-slate-300 dark:text-slate-600">vaccines</span>
+</div>
+<div class="sr-only" data-alt="Anestesia dental Septodont Lidocaína"></div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<p class="text-xs font-semibold text-slate-500 dark:text-slate-400">Septodont</p>
+<h3 class="mt-1 text-sm font-bold text-slate-900 line-clamp-2 group-hover:text-primary dark:text-white">Anestesia Lidocaína 2% con Epinefrina - Caja 50 u.</h3>
+<div class="mt-4 flex flex-col gap-1">
+<span class="text-xs text-slate-400 line-through">$28.500</span>
+<span class="text-lg font-bold text-primary">$24.225</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-slate-100 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-200 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600">
+                                    Ver Oferta
+                                </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-lg dark:border-slate-700 dark:bg-slate-800">
+<div class="absolute left-3 top-3 z-10 rounded bg-red-500 px-2 py-1 text-xs font-bold text-white shadow-sm">-30% OFF</div>
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-900">
+<div class="h-full w-full flex items-center justify-center bg-neutral-100 dark:bg-slate-800">
+<span class="material-symbols-outlined text-6xl text-slate-300 dark:text-slate-600">content_cut</span>
+</div>
+<div class="sr-only" data-alt="Set de instrumental dental básico"></div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<p class="text-xs font-semibold text-slate-500 dark:text-slate-400">Hu-Friedy</p>
+<h3 class="mt-1 text-sm font-bold text-slate-900 line-clamp-2 group-hover:text-primary dark:text-white">Kit de Diagnóstico Básico - Espejo, Explorador, Pinza</h3>
+<div class="mt-4 flex flex-col gap-1">
+<span class="text-xs text-slate-400 line-through">$65.000</span>
+<span class="text-lg font-bold text-primary">$45.500</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-slate-100 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-200 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600">
+                                    Ver Oferta
+                                </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-lg dark:border-slate-700 dark:bg-slate-800">
+<div class="absolute left-3 top-3 z-10 rounded bg-red-500 px-2 py-1 text-xs font-bold text-white shadow-sm">-10% OFF</div>
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-900">
+<div class="h-full w-full flex items-center justify-center bg-neutral-100 dark:bg-slate-800">
+<span class="material-symbols-outlined text-6xl text-slate-300 dark:text-slate-600">sanitizer</span>
+</div>
+<div class="sr-only" data-alt="Desinfectante de superficies hospitalarias"></div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<p class="text-xs font-semibold text-slate-500 dark:text-slate-400">Vantal</p>
+<h3 class="mt-1 text-sm font-bold text-slate-900 line-clamp-2 group-hover:text-primary dark:text-white">Desinfectante de Superficies Alto Nivel - 5 Litros</h3>
+<div class="mt-4 flex flex-col gap-1">
+<span class="text-xs text-slate-400 line-through">$32.000</span>
+<span class="text-lg font-bold text-primary">$28.800</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-slate-100 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-200 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600">
+                                    Ver Oferta
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-slate-200 pt-16 pb-8 dark:bg-slate-900 dark:border-slate-800">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-4">
+<!-- Brand Column -->
+<div class="lg:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<div class="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">dentistry</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Insumodent</span>
+</div>
+<p class="text-sm text-slate-500 leading-relaxed dark:text-slate-400">
+                            La plataforma líder para comparar precios de insumos dentales. Ayudamos a profesionales a optimizar sus costos.
+                        </p>
+</div>
+<!-- Links Column 1 -->
+<div>
+<h4 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">Empresa</h4>
+<ul class="space-y-3">
+<li><a class="text-sm text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Sobre Nosotros</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Tiendas Asociadas</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Prensa</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div>
+<h4 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">Ayuda</h4>
+<ul class="space-y-3">
+<li><a class="text-sm text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Centro de Ayuda</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Términos y Condiciones</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Política de Privacidad</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div class="lg:col-span-1">
+<h4 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">Suscríbete</h4>
+<p class="text-sm text-slate-500 mb-4 dark:text-slate-400">Recibe las mejores ofertas semanales en tu correo.</p>
+<form class="flex flex-col gap-2">
+<input class="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:bg-slate-800 dark:border-slate-700 dark:text-white" placeholder="tu@email.com" type="email"/>
+<button class="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-primary-dark" type="submit">
+                                Suscribirme
+                            </button>
+</form>
+</div>
+</div>
+<div class="mt-12 border-t border-slate-100 pt-8 dark:border-slate-800">
+<p class="text-center text-sm text-slate-400">
+                        © 2023 Insumodent. Todos los derechos reservados.
+                    </p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

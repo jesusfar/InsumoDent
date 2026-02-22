@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Insumodent - Directorio de Tiendas</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.25rem", 
+                "lg": "0.5rem", 
+                "xl": "0.75rem", 
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-3 lg:px-10">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-[32px]">dentistry</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Insumodent</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Inicio</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Comparador</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Blog</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Ingresar</span>
+</button>
+</div>
+<!-- Mobile Menu Icon (Placeholder) -->
+<button class="md:hidden text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<div class="relative w-full bg-slate-100 dark:bg-slate-900 overflow-hidden">
+<!-- Abstract Background Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#137fec 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="layout-container px-4 py-16 sm:px-6 lg:px-8 flex flex-col items-center text-center relative z-10">
+<h1 class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl max-w-3xl mb-4">
+                        Tiendas Adheridas
+                    </h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed max-w-2xl">
+                        Compara precios y compra con confianza en las mejores tiendas de insumos odontológicos del país.
+                    </p>
+<!-- Search Bar Optional -->
+<div class="mt-8 w-full max-w-lg relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full h-12 pl-12 pr-4 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-sm transition-all" placeholder="Buscar tienda..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Stores Grid Section -->
+<div class="layout-container px-4 py-12 sm:px-6 lg:px-40 bg-white dark:bg-background-dark">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+<!-- Store Card 1 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">verified</span>
+<!-- Placeholder Logo -->
+<div class="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-primary">dentistry</span>
+                                Concepto
+                            </div>
+</div>
+<div class="flex flex-col flex-1 p-5 gap-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Concepto Dental</h3>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">Distribuidor Oficial</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star_half</span>
+<span class="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">4.8</span>
+<span class="text-xs text-slate-400 dark:text-slate-500">(120 reseñas)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                    1,500+ productos
+                                </div>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn">
+                                    Ver Catálogo
+                                    <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Store Card 2 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">verified</span>
+<div class="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-teal-500">health_and_safety</span>
+                                AX Dental
+                            </div>
+</div>
+<div class="flex flex-col flex-1 p-5 gap-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">AX Dental</h3>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">Importador Directo</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">4.9</span>
+<span class="text-xs text-slate-400 dark:text-slate-500">(85 reseñas)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                    2,300+ productos
+                                </div>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn">
+                                    Ver Catálogo
+                                    <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Store Card 3 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">verified</span>
+<div class="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-indigo-500">medical_services</span>
+                                Mega
+                            </div>
+</div>
+<div class="flex flex-col flex-1 p-5 gap-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Mega Dental</h3>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">Mayorista Nacional</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star_half</span>
+<span class="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">4.5</span>
+<span class="text-xs text-slate-400 dark:text-slate-500">(310 reseñas)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                    500+ productos
+                                </div>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn">
+                                    Ver Catálogo
+                                    <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Store Card 4 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">verified</span>
+<div class="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-rose-400">local_shipping</span>
+                                QuickDent
+                            </div>
+</div>
+<div class="flex flex-col flex-1 p-5 gap-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">QuickDent Envíos</h3>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">Insumos Rápidos</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-slate-200 text-sm">star</span>
+<span class="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">4.0</span>
+<span class="text-xs text-slate-400 dark:text-slate-500">(45 reseñas)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                    800+ productos
+                                </div>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn">
+                                    Ver Catálogo
+                                    <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Store Card 5 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">verified</span>
+<div class="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-orange-400">biotech</span>
+                                BioTech
+                            </div>
+</div>
+<div class="flex flex-col flex-1 p-5 gap-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">BioTech Dental</h3>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">Especialista en Equipos</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">5.0</span>
+<span class="text-xs text-slate-400 dark:text-slate-500">(12 reseñas)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                    120+ productos
+                                </div>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn">
+                                    Ver Catálogo
+                                    <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Store Card 6 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">verified</span>
+<div class="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-cyan-600">clean_hands</span>
+                                ProHigiene
+                            </div>
+</div>
+<div class="flex flex-col flex-1 p-5 gap-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">ProHigiene</h3>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">Descartables</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm">star_half</span>
+<span class="material-symbols-outlined text-slate-200 text-sm">star</span>
+<span class="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">3.8</span>
+<span class="text-xs text-slate-400 dark:text-slate-500">(204 reseñas)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                    3,100+ productos
+                                </div>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn">
+                                    Ver Catálogo
+                                    <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Section -->
+<div class="w-full bg-blue-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+<div class="layout-container px-4 py-12 sm:px-6 lg:px-40">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+<div class="flex-1 text-center lg:text-left">
+<h2 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight mb-2">
+                                Nuestras tiendas están verificadas
+                            </h2>
+<p class="text-slate-600 dark:text-slate-400 text-base">
+                                Trabajamos solo con proveedores certificados para garantizar tu seguridad y la calidad de tus insumos.
+                            </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 w-full lg:w-auto">
+<div class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex-1 lg:flex-none lg:min-w-[240px]">
+<div class="flex items-center justify-center size-10 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white text-sm">Pagos Seguros</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Encriptación 256-bit</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex-1 lg:flex-none lg:min-w-[240px]">
+<div class="flex items-center justify-center size-10 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white text-sm">Proveedores Certificados</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Validación fiscal</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="layout-container px-6 py-10 lg:px-40 flex flex-col gap-6 text-center">
+<div class="flex flex-wrap items-center justify-center gap-6 md:justify-around">
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors text-sm font-medium leading-normal min-w-40" href="#">Términos y Condiciones</a>
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors text-sm font-medium leading-normal min-w-40" href="#">Política de Privacidad</a>
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors text-sm font-medium leading-normal min-w-40" href="#">Contacto</a>
+</div>
+<div class="flex flex-wrap justify-center gap-6 mt-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468.465c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">LinkedIn</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+<p class="text-slate-400 text-xs sm:text-sm font-normal leading-normal mt-4">
+                    © 2024 Insumodent. Todos los derechos reservados.
+                </p>
+</div>
+</footer>
+</div>
+</body></html>

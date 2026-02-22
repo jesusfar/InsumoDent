@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Insumodent - Resultados de búsqueda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0e62b8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for sidebar if needed */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-slate-900 dark:text-slate-100">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo -->
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Insumodent</h1>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Inicio</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Categorías</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Ofertas</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Vender</a>
+</nav>
+<!-- Auth Buttons -->
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center h-10 px-6 rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-bold transition-colors shadow-sm">
+                        Ingresar
+                    </button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Sub-header / Search Area -->
+<div class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="w-full md:max-w-xl relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border border-slate-300 dark:border-slate-700 rounded-lg leading-5 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary sm:text-sm shadow-sm" placeholder="Buscar productos, marcas o categorías..." type="text" value="resina 3m"/>
+</div>
+<div class="w-full md:w-auto text-sm text-slate-500 dark:text-slate-400 font-medium">
+                    Mostrando 45 resultados para <span class="text-slate-900 dark:text-white font-semibold">"resina 3m"</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Sidebar / Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-8">
+<!-- Mobile Filter Toggle (Visible only on small screens) -->
+<div class="lg:hidden mb-4">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium shadow-sm">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        Filtrar resultados
+                    </button>
+</div>
+<div class="hidden lg:block space-y-8">
+<!-- Categories -->
+<div class="space-y-3">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Categorías</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Resinas Compuestas</span>
+<span class="ml-auto text-xs text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">12</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Adhesivos</span>
+<span class="ml-auto text-xs text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">8</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Cementos</span>
+<span class="ml-auto text-xs text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">5</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Accesorios</span>
+<span class="ml-auto text-xs text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">3</span>
+</label>
+</div>
+</div>
+<!-- Divider -->
+<div class="border-t border-slate-200 dark:border-slate-800"></div>
+<!-- Brands -->
+<div class="space-y-3">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Marcas</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">3M</span>
+<span class="ml-auto text-xs text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">45</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Ivoclar</span>
+<span class="ml-auto text-xs text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">10</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Tokuyama</span>
+<span class="ml-auto text-xs text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">5</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Voco</span>
+<span class="ml-auto text-xs text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">2</span>
+</label>
+</div>
+</div>
+<!-- Divider -->
+<div class="border-t border-slate-200 dark:border-slate-800"></div>
+<!-- Price Range -->
+<div class="space-y-3">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Rango de Precio</h3>
+<div class="flex items-center gap-2">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+<span class="text-slate-400 text-xs">$</span>
+</div>
+<input class="block w-full pl-5 pr-2 py-1.5 border border-slate-300 dark:border-slate-700 rounded text-sm bg-white dark:bg-slate-800 focus:ring-primary focus:border-primary" placeholder="Min" type="number"/>
+</div>
+<span class="text-slate-400">-</span>
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+<span class="text-slate-400 text-xs">$</span>
+</div>
+<input class="block w-full pl-5 pr-2 py-1.5 border border-slate-300 dark:border-slate-700 rounded text-sm bg-white dark:bg-slate-800 focus:ring-primary focus:border-primary" placeholder="Max" type="number"/>
+</div>
+</div>
+<button class="w-full py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold uppercase rounded transition-colors">
+                            Aplicar
+                        </button>
+</div>
+</div>
+</aside>
+<!-- Results Grid -->
+<div class="flex-1">
+<!-- Sorting Bar -->
+<div class="flex justify-between items-center mb-6">
+<span class="text-sm text-slate-500 dark:text-slate-400">Ordenado por: <span class="font-medium text-slate-900 dark:text-white cursor-pointer">Relevancia</span></span>
+<div class="flex gap-2">
+<button class="p-1.5 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-primary">
+<span class="material-symbols-outlined text-[24px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-400">
+<span class="material-symbols-outlined text-[24px]">view_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col h-full overflow-hidden">
+<div class="relative w-full pt-[100%] bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700">
+<img class="absolute top-0 left-0 w-full h-full object-contain p-6 mix-blend-multiply dark:mix-blend-normal opacity-90 group-hover:scale-105 transition-transform duration-300" data-alt="Close up of a dental syringe resin dispenser" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU3qwMTGBliomgG2R-jcCsW4gZB2MofYqOWAT8Gd8J3qGoqN_l-J4X3JSFbrbs8w128FrZWo0mtSFuuppyvsWBJBhb12PTaAdgMl0EuLdfB9odDYBxHzbI2FhHuSVSxFe58qOH3aYDm5oh03-DDPw_KO_B9ng_tTGWwmOdVMaNLxU1D0tiF9dmVJOsn0phtG1gLs2qKqSgyrpWxhaeBVd0iLVuGTzPIg7QyeYOGZ4qQ204_nJuhdj9VyuPHUvAYYFR3j1wQAc01Xaf"/>
+<div class="absolute top-3 left-3 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 text-xs font-bold px-2.5 py-0.5 rounded-full">
+                                Oferta
+                            </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="mb-2">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">3M</span>
+</div>
+<h3 class="text-base font-semibold text-slate-900 dark:text-white leading-tight mb-2 line-clamp-2 min-h-[2.5rem]">
+                                Resina Filtek Z250 Universal Restauradora - A2
+                            </h3>
+<div class="mt-auto">
+<div class="flex items-baseline gap-2 mb-1">
+<span class="text-lg font-bold text-primary">Desde $45.000</span>
+</div>
+<div class="flex items-center gap-1 mb-4 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+<span>Disponible en 3 tiendas</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg border border-slate-300 dark:border-slate-600 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-semibold transition-colors">
+                                    Comparar precios
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col h-full overflow-hidden">
+<div class="relative w-full pt-[100%] bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700">
+<img class="absolute top-0 left-0 w-full h-full object-contain p-6 mix-blend-multiply dark:mix-blend-normal opacity-90 group-hover:scale-105 transition-transform duration-300" data-alt="Medical tools and dental equipment on clean surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx11fV2PsXIbzTMRd2tMkBRd_FaTtYJsTY3tJB7Tlu87TXj8vd8aHh5gceDVAHi9-IiSI2e-whID0RcU_U6sU5VY8eg7Jvm7uNoopMwa5mDswt8JDjFUqzxQO90zVBJganqSKmE0iBM5nEN4ywLSN4KkktMxuXsT--F5LxG21DJ2REGrHsF6wn9ic6JgryMJO44504xejDHI2KG6cLAsPoC3tfUz_fvtNwOnkUDPewoEStfBKQPGLT2taXbDlaZojbXCCXH14B0jJy"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="mb-2">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">3M</span>
+</div>
+<h3 class="text-base font-semibold text-slate-900 dark:text-white leading-tight mb-2 line-clamp-2 min-h-[2.5rem]">
+                                Resina Filtek Supreme XTE Body - A3
+                            </h3>
+<div class="mt-auto">
+<div class="flex items-baseline gap-2 mb-1">
+<span class="text-lg font-bold text-primary">Desde $52.900</span>
+</div>
+<div class="flex items-center gap-1 mb-4 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+<span>Disponible en 5 tiendas</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg border border-slate-300 dark:border-slate-600 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-semibold transition-colors">
+                                    Comparar precios
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col h-full overflow-hidden">
+<div class="relative w-full pt-[100%] bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700">
+<img class="absolute top-0 left-0 w-full h-full object-contain p-6 mix-blend-multiply dark:mix-blend-normal opacity-90 group-hover:scale-105 transition-transform duration-300" data-alt="Dental composite resin kit packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXzNBXBwNLCKOEkmjqhn6CbFKLBlA52XvIoEVCUCl9P1Rp9fl0CGEeEFpH0C1REVv51ptbHQB70A-hl5FryVYZcy727ZGJlWE7Nij7dW_LGjytdNU1bPR900i994K5015SVZC4yjhgjkGhGTDYQN2B6xDU5ZKCDF5wqamdjgHaMZ6qURcOQf_zW2pJSK3qE13yF1BuWzA9kr_56qS4ttZs1gZJeva9hVY6fOzCs8h1AWRnR_ZgWu9C5oXlS64EfMUfweoeehlJwm8d"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="mb-2">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">3M</span>
+</div>
+<h3 class="text-base font-semibold text-slate-900 dark:text-white leading-tight mb-2 line-clamp-2 min-h-[2.5rem]">
+                                Adhesivo Single Bond Universal (5ml)
+                            </h3>
+<div class="mt-auto">
+<div class="flex items-baseline gap-2 mb-1">
+<span class="text-lg font-bold text-primary">Desde $38.500</span>
+</div>
+<div class="flex items-center gap-1 mb-4 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+<span>Disponible en 8 tiendas</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg border border-slate-300 dark:border-slate-600 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-semibold transition-colors">
+                                    Comparar precios
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col h-full overflow-hidden">
+<div class="relative w-full pt-[100%] bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700">
+<img class="absolute top-0 left-0 w-full h-full object-contain p-6 mix-blend-multiply dark:mix-blend-normal opacity-90 group-hover:scale-105 transition-transform duration-300" data-alt="Dental tool closeup showing metallic instrument" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY7g72uHw481QwW3xTrc5y2jaP8ojAKBcIzx9XZAJ6l8q6jQNrp5t56rANx8khu5z2hk_zsDC4uosH0Pv6sxyPHna8tLP-4aQSdqeD4A4xXwxCqV-MZkuB1XcBPTi-OeBbC8waBtd2XW9-UfZXr_n8RWem4oPwQf3R82fUi4brNNheg0k-zFaiS9wRTx1sTrQ37bSTqhUCzGRXRzXAWgHRYluNCp5s7868dVokEEfZa2Q26qNi5qYqVkMlqYINA6B_q7BrrxIFEtw_"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="mb-2">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Tokuyama</span>
+</div>
+<h3 class="text-base font-semibold text-slate-900 dark:text-white leading-tight mb-2 line-clamp-2 min-h-[2.5rem]">
+                                Estelite Sigma Quick - Jeringa 3.8g
+                            </h3>
+<div class="mt-auto">
+<div class="flex items-baseline gap-2 mb-1">
+<span class="text-lg font-bold text-primary">Desde $42.000</span>
+</div>
+<div class="flex items-center gap-1 mb-4 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+<span>Disponible en 2 tiendas</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg border border-slate-300 dark:border-slate-600 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-semibold transition-colors">
+                                    Comparar precios
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col h-full overflow-hidden">
+<div class="relative w-full pt-[100%] bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700">
+<img class="absolute top-0 left-0 w-full h-full object-contain p-6 mix-blend-multiply dark:mix-blend-normal opacity-90 group-hover:scale-105 transition-transform duration-300" data-alt="Various dental equipment laid out on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFhXp_GQHofnnCd-h8o-RgpumgSs_aHW3mwYDrnMPR0dIN0hrNp2sXRdW62HQfbzGvuueF8saqg8WChk-37ejzNTBWXtc9htx1EkOsziZYN0yqRdcx9FV6dKrwfbMtkthpAWPOqX4l28_RApWW_qSGTPz3XDVnZltC7uzLZR0JRJSsFHouGczzkv3LYiX-GhUiTq-dDG84_pggb6tvlJ0RAZmv4_vE73XAi_mQHYWGBb_gX-JN2FqGt5ikC4BtkQYBr3U-QwP5U3-1"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="mb-2">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Ivoclar</span>
+</div>
+<h3 class="text-base font-semibold text-slate-900 dark:text-white leading-tight mb-2 line-clamp-2 min-h-[2.5rem]">
+                                Tetric N-Ceram Bulk Fill - IVA
+                            </h3>
+<div class="mt-auto">
+<div class="flex items-baseline gap-2 mb-1">
+<span class="text-lg font-bold text-primary">Desde $58.200</span>
+</div>
+<div class="flex items-center gap-1 mb-4 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+<span>Disponible en 4 tiendas</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg border border-slate-300 dark:border-slate-600 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-semibold transition-colors">
+                                    Comparar precios
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col h-full overflow-hidden">
+<div class="relative w-full pt-[100%] bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700">
+<img class="absolute top-0 left-0 w-full h-full object-contain p-6 mix-blend-multiply dark:mix-blend-normal opacity-90 group-hover:scale-105 transition-transform duration-300" data-alt="Blue light curing dental tool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrEE7WSYQM6qz6o5paoCzzWsWFqafga2q5ibxwF4GO-l_A8g7tI-oxetPAFsaop9p1PX7Z2EqvNEqkgpuOmuSGVTGcaVIpToRO_lk3-7zLjkVFU867xTnY7JT5Q12qdWG1P0NPC8KPSLfSdGlbuP5tlIi8vtqIXzdVotny5UlJoSq9Z7YiOPoXcao2K7qdb57Oqp9V7On_9-9nalshbWhxaAxIGoXr1YyUZgO3h75KI6AbfvAnCglGfkaAEL13m-j24vW-WgdJtIDo"/>
+<div class="absolute top-3 left-3 bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 text-xs font-bold px-2.5 py-0.5 rounded-full">
+                                -15%
+                            </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="mb-2">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">3M</span>
+</div>
+<h3 class="text-base font-semibold text-slate-900 dark:text-white leading-tight mb-2 line-clamp-2 min-h-[2.5rem]">
+                                Resina Filtek P60 Posterior - A3
+                            </h3>
+<div class="mt-auto">
+<div class="flex items-baseline gap-2 mb-1">
+<span class="text-lg font-bold text-primary">Desde $48.900</span>
+<span class="text-xs text-slate-400 line-through">$57.500</span>
+</div>
+<div class="flex items-center gap-1 mb-4 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+<span>Disponible en 1 tienda</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg border border-slate-300 dark:border-slate-600 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-semibold transition-colors">
+                                    Comparar precios
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-center">
+<nav class="flex items-center gap-1">
+<a class="p-2 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-medium text-sm" href="#">1</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium text-sm" href="#">2</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium text-sm" href="#">3</a>
+<span class="w-10 h-10 flex items-center justify-center text-slate-400">...</span>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium text-sm" href="#">5</a>
+<a class="p-2 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-lg font-bold text-slate-900 dark:text-white">Insumodent</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                        El buscador de insumos dentales más grande del país. Encuentra los mejores precios en un solo lugar.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-4">Empresa</h4>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Acerca de nosotros</a></li>
+<li><a class="hover:text-primary" href="#">Blog</a></li>
+<li><a class="hover:text-primary" href="#">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-4">Ayuda</h4>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Preguntas frecuentes</a></li>
+<li><a class="hover:text-primary" href="#">Términos y condiciones</a></li>
+<li><a class="hover:text-primary" href="#">Política de privacidad</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-4">Suscríbete</h4>
+<p class="text-xs text-slate-500 mb-3">Recibe las mejores ofertas en tu correo.</p>
+<div class="flex gap-2">
+<input class="flex-1 px-3 py-2 text-sm border border-slate-300 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Tu email" type="email"/>
+<button class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg text-sm font-bold">OK</button>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 mt-12 pt-8 text-center text-sm text-slate-400">
+                © 2023 Insumodent. Todos los derechos reservados.
+            </div>
+</div>
+</footer>
+</body></html>

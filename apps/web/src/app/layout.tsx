@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   },
 };
 
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
 export default function RootLayout({
   children,
 }: {
@@ -33,7 +36,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+      </head>
+      <body className={`${inter.className} bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary`}>
+        <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
