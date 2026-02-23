@@ -1,6 +1,21 @@
 import Link from 'next/link';
+import { getStores } from '@/lib/api';
+import TiltCard from '@/components/TiltCard';
 
-export default function TiendasPage() {
+export const revalidate = 3600; // Refrescar las tiendas cada hora
+
+export default async function TiendasPage() {
+    const stores = await getStores();
+
+    // Iconos temáticos según el nombre (Fallback visual)
+    const getStoreIcon = (name: string) => {
+        const n = name.toLowerCase();
+        if (n.includes('concepto')) return { icon: 'dentistry', color: 'text-primary' };
+        if (n.includes('ax')) return { icon: 'health_and_safety', color: 'text-teal-500' };
+        if (n.includes('mega')) return { icon: 'medical_services', color: 'text-indigo-500' };
+        return { icon: 'storefront', color: 'text-slate-400' };
+    };
+
     return (
         <div className="flex-grow w-full bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
             {/* Hero Section */}
@@ -37,141 +52,73 @@ export default function TiendasPage() {
 
             {/* Stores Grid Section */}
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 bg-white dark:bg-background-dark">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-
-                    {/* Store Card 1 */}
-                    <div className="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                        <div className="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative">
-                            <span className="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
-                                verified
-                            </span>
-                            <div className="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2">
-                                <span className="material-symbols-outlined text-4xl text-primary">dentistry</span>
-                                Concepto
-                            </div>
-                        </div>
-                        <div className="flex flex-col flex-1 p-5 gap-4">
-                            <div>
-                                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
-                                    Concepto Dental
-                                </h3>
-                                <p className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                                    Distribuidor Oficial
-                                </p>
-                                <div className="flex items-center gap-1 mb-2">
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star_half</span>
-                                    <span className="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">4.8</span>
-                                    <span className="text-xs text-slate-400 dark:text-slate-500">(120 reseñas)</span>
-                                </div>
-                                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
-                                    <span className="material-symbols-outlined text-[14px]">inventory_2</span>
-                                    1,500+ productos
-                                </div>
-                            </div>
-                            <div className="mt-auto pt-2">
-                                <button className="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn">
-                                    Ver Catálogo
-                                    <span className="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">
-                                        arrow_forward
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
+                {stores.length === 0 ? (
+                    <div className="text-center py-12">
+                        <span className="material-symbols-outlined text-6xl text-slate-300 dark:text-slate-700 mb-4 block">store_off</span>
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white">No se pudieron cargar las tiendas</h3>
+                        <p className="text-slate-500">Por favor, inténtalo de nuevo en unos minutos o verifica tu conexión.</p>
                     </div>
+                ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                        {stores.map((store) => {
+                            const visual = getStoreIcon(store.name);
+                            return (
+                                <TiltCard key={store.id} className="flex flex-col h-full bg-white dark:bg-slate-900" glowColor="rgba(56, 189, 248, 0.2)">
+                                    <div className="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative rounded-t-xl group-hover:bg-blue-50/50 dark:group-hover:bg-slate-800 transition-colors">
+                                        <span className="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors" title="Verificada">
+                                            verified
+                                        </span>
+                                        <div className="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                                            {store.logo ? (
+                                                <img src={store.logo} alt={store.name} className="h-10 object-contain mix-blend-multiply dark:mix-blend-normal" />
+                                            ) : (
+                                                <>
+                                                    <span className={`material-symbols-outlined text-4xl ${visual.color}`}>{visual.icon}</span>
+                                                    {store.name.split(' ')[0]}
+                                                </>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col flex-1 p-5 gap-4 bg-white dark:bg-slate-900 rounded-b-xl">
+                                        <div>
+                                            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                                                {store.name}
+                                            </h3>
+                                            <p className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3 flex items-center gap-1">
+                                                <span className="material-symbols-outlined text-[14px]">local_shipping</span>
+                                                Envío: {store.shipping === 0 ? 'Gratis' : `$${store.shipping.toLocaleString('es-AR')}`}
+                                            </p>
 
-                    {/* Store Card 2 */}
-                    <div className="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                        <div className="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative">
-                            <span className="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
-                                verified
-                            </span>
-                            <div className="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2">
-                                <span className="material-symbols-outlined text-4xl text-teal-500">health_and_safety</span>
-                                AX Dental
-                            </div>
-                        </div>
-                        <div className="flex flex-col flex-1 p-5 gap-4">
-                            <div>
-                                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
-                                    AX Dental
-                                </h3>
-                                <p className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                                    Importador Directo
-                                </p>
-                                <div className="flex items-center gap-1 mb-2">
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">4.9</span>
-                                    <span className="text-xs text-slate-400 dark:text-slate-500">(85 reseñas)</span>
-                                </div>
-                                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
-                                    <span className="material-symbols-outlined text-[14px]">inventory_2</span>
-                                    2,300+ productos
-                                </div>
-                            </div>
-                            <div className="mt-auto pt-2">
-                                <button className="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn">
-                                    Ver Catálogo
-                                    <span className="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">
-                                        arrow_forward
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
+                                            {/* Rating Mock */}
+                                            <div className="flex items-center gap-1 mb-2">
+                                                <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
+                                                <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
+                                                <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
+                                                <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
+                                                <span className="material-symbols-outlined text-amber-400 text-sm">star_half</span>
+                                                <span className="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">4.8</span>
+                                                <span className="text-xs text-slate-400 dark:text-slate-500">(120 reseñas)</span>
+                                            </div>
+
+                                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
+                                                <span className="material-symbols-outlined text-[14px]">inventory_2</span>
+                                                {store.productsCount ? `${store.productsCount} productos` : 'Catálogo Activo'}
+                                            </div>
+                                        </div>
+                                        <div className="mt-auto pt-2">
+                                            <a href={store.url} target="_blank" rel="noopener noreferrer" className="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn pointer-events-auto relative z-20">
+                                                Visitar Tienda
+                                                <span className="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">
+                                                    open_in_new
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </TiltCard>
+                            );
+                        })}
                     </div>
-
-                    {/* Store Card 3 */}
-                    <div className="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                        <div className="aspect-[2/1] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-6 border-b border-slate-100 dark:border-slate-800 relative">
-                            <span className="material-symbols-outlined absolute top-4 right-4 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
-                                verified
-                            </span>
-                            <div className="text-2xl font-black text-slate-400 dark:text-slate-500 tracking-tight flex items-center gap-2">
-                                <span className="material-symbols-outlined text-4xl text-indigo-500">medical_services</span>
-                                Mega
-                            </div>
-                        </div>
-                        <div className="flex flex-col flex-1 p-5 gap-4">
-                            <div>
-                                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
-                                    Mega Dental
-                                </h3>
-                                <p className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                                    Mayorista Nacional
-                                </p>
-                                <div className="flex items-center gap-1 mb-2">
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star</span>
-                                    <span className="material-symbols-outlined text-amber-400 text-sm">star_half</span>
-                                    <span className="ml-1 text-sm font-bold text-slate-700 dark:text-slate-200">4.5</span>
-                                    <span className="text-xs text-slate-400 dark:text-slate-500">(310 reseñas)</span>
-                                </div>
-                                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-semibold">
-                                    <span className="material-symbols-outlined text-[14px]">inventory_2</span>
-                                    500+ productos
-                                </div>
-                            </div>
-                            <div className="mt-auto pt-2">
-                                <button className="w-full py-2.5 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 group/btn">
-                                    Ver Catálogo
-                                    <span className="material-symbols-outlined text-[18px] group-hover/btn:translate-x-0.5 transition-transform">
-                                        arrow_forward
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                )}
             </div>
 
             {/* Trust Section */}

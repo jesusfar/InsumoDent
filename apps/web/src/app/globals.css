@@ -1,7 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Inter", "sans-serif";
+@layer base {
+  :root {
+    --primary: 187 100% 40%;
+    --primary-dark: 187 100% 30%;
+    --primary-glow: 187 100% 50%;
+
+    /* Minimalist Light Theme */
+    --background-light: 210 20% 98%;
+    /* Off-white #FAFBFC */
+    --surface-light: 0 0% 100%;
+    /* Pure white #FFFFFF */
+    --border-light: 214 32% 91%;
+    /* Light gray #E1E4E8 */
+    --background-dark: 210 20% 98%;
+    /* Fallback for components that force dark */
+    --surface-dark: 0 0% 100%;
+    --border-dark: 214 32% 91%;
+  }
+
+  .dark {
+    --primary: 187 100% 50%;
+    --primary-dark: 187 100% 35%;
+    --primary-glow: 187 100% 50%;
+
+    /* Obsidian Dark Theme */
+    --background-light: 0 0% 4%;
+    /* So it behaves properly when toggled */
+    --background-dark: 0 0% 4%;
+    /* #0A0A0A Deep Obsidian */
+    --surface-dark: 0 0% 8%;
+    /* #141414 Elevated surface */
+    --border-dark: 0 0% 12%;
+    /* #1F1F1F Subtle lines */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[hsl(var(--background-light))] dark:bg-[hsl(var(--background-dark))] text-slate-800 dark:text-slate-200 antialiased selection:bg-primary/30 selection:text-white transition-colors duration-300;
+    font-family: 'Figtree', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-display {
+    font-family: 'Figtree', sans-serif;
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer components {
+
+  /* Neon Obsidian Glass Patterns */
+  .glass {
+    @apply bg-[hsl(var(--surface-dark))]/70 backdrop-blur-xl border border-[hsl(var(--border-dark))] shadow-lg shadow-black/50 text-slate-100;
+  }
+
+  .glass-panel {
+    @apply bg-[hsl(var(--surface-dark))]/80 backdrop-blur-2xl border border-[hsl(var(--border-dark))]/80 shadow-2xl shadow-black/60;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-[#7DF9FF] to-blue-400;
+  }
+
+  /* Input & Controls */
+  .input-premium {
+    @apply w-full rounded-none border-b-2 border-[hsl(var(--border-dark))] bg-transparent px-2 py-3 text-white transition-all placeholder:text-slate-500 hover:border-primary/50 focus:border-primary focus:outline-none focus:ring-0 focus:bg-[hsl(var(--surface-dark))]/30 shadow-none;
+  }
+
+  .btn-primary-glow {
+    @apply relative overflow-hidden rounded-none border border-primary bg-primary/10 px-6 py-3 font-semibold text-primary transition-all hover:bg-primary hover:text-black hover:shadow-[0_0_20px_hsl(var(--primary-glow))] active:scale-95 flex items-center justify-center gap-2 uppercase tracking-wider text-sm;
+  }
+}
+
+@layer utilities {
+  .animate-in-stagger {
+    animation: fadeInSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

@@ -28,6 +28,8 @@ export const metadata: Metadata = {
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Providers } from '@/components/Providers';
+import { Toaster } from 'sonner';
 
 export default function RootLayout({
   children,
@@ -35,18 +37,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning className="scroll-smooth">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${inter.className} bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary`}>
-        <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      {/* Las fuentes (Syne y Manrope) están definidas ahora en el globals.css */}
+      <body className={`font-sans bg-[hsl(var(--background-light))] dark:bg-[hsl(var(--background-dark))] text-slate-900 dark:text-slate-200 antialiased selection:bg-primary/20 selection:text-primary min-h-screen flex flex-col overflow-x-hidden`}>
+        <Providers attribute="class" defaultTheme="dark" forcedTheme="dark">
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 w-full relative z-10 animate-in-stagger">
             {children}
           </main>
           <Footer />
-        </div>
+          <Toaster richColors position="bottom-right" theme="dark" />
+        </Providers>
       </body>
     </html>
   );
